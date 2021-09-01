@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+
+            /* -----------------------------------*/
+            /* ---------->>> GLOBAL <<<-----------*/
+            /* -----------------------------------*/
+
+            * {
+                margin: 0;
+                padding: 0;
+                color: white;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                box-sizing: border-box;
+            }
+
+            html {
+                margin: 0;
+                padding: 0;
+                background-color: #E8DCBD;
+            }
+
+            main {
+                margin-top: 0;
+                height: calc(100vh - 20px);
+                background-color: #E8DCBD;
+            }
+
+            header {
+                margin: 17px auto;
+                width: 17vw;
+                max-width: 700px;
+                padding: 7px 70px;
+                background: #A18F9A;
+                border-radius: 13px;
+                filter: drop-shadow(4px 4px 6px black);
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 10px;
+                color: #93A8A0;
+            }
+
+            header select {
+                color: black;
+            }
+            header option {
+                color: black;
+            }
+
+
+            #cesar,
+            #base_64 {
+
+                margin: 17px auto;
+                padding: 7px;
+                display: none;
+                width: 70vw;
+                max-width: 700px; 
+                border-radius: 7px;
+                background: #A18F9A;
+                justify-content: space-between;
+                filter: drop-shadow(4px 4px 6px black);
+
+
+            }
+            textarea {
+                
+                padding: 7px;
+                width: 23vw;
+                height: 120px;
+                border-radius: 7px;
+                background-color: #E8DCBD;
+                color: black;
+            }
+            #cesar textarea {
+                height: 111px;
+            }
+            #cesar input {
+                margin-bottom: 5px;
+                border-radius: 10px;
+                text-align: center;
+                color: black;
+
+            }
+            #cesar section {
+                text-align: center;
+            }
+
+            .sol {
+                background-color: #E8DCBD;
+                width: 30vw;
+                min-height: 150px;
+                padding: 10px;
+                border-radius: 10px;
+                color: black;
+            }
+            #base_64 .sol {
+                word-wrap: break-word;
+            }
+            footer {
+                background-color: #A18F9A;
+                height: 3vh;
+                color: black;
+                text-align: center;
+                border-radius: 25px 25px 0 0;
+                padding-top: 1px;
+                filter: drop-shadow(4px 4px 6px black);
+            }
+            footer a {
+                color: black;
+            }
+
+            /* -----------------------------------*/
+            /* ---------->>> media query <<<-----------*/
+            /* -----------------------------------*/
+ 
+            @media screen and (max-width: 700px) {
+                header {
+                    width: 80vw;
+                }
+                #cesar,
+                #base_64 {
+                    display: none;
+                    width: 95vw;
+                    flex-direction: column;
+                }
+                textarea {
+                    width: 100%;
+                    max-height: 15vh;
+                    margin-bottom: 20px;
+                }
+                .sol {
+                    width: 100%;
+                    min-height: 15vh;
+                }
+
+
+            }
+        </style>
+        <title>Decodificador</title>
+    </head>
+    <body>
+        <main>
+            <h1>Passinho do Romano & Base_64</h1>
+
+            <header>
+
+                <select onchange="myFunction()" id="selecionaCifra">
+                    <option value="" disable selected>Faça uma escolha</option>
+                    <option value="cesar">Cifra de César</option>
+                    <option value="base_64">Base_64</option>
+                </select>
+                <form id="radioCod" onchange="a()">
+                    <input type="radio" id="x" name="xOuy" checked="checked" value="x">
+                    <label for="x">Codificar</label><br>
+                    <input type="radio" id="y" name="xOuy" value="y">
+                    <label for="y">Decodificar</label><br>
+
+                </form>
+            </header>
+            <section>
+
+                <div id="cesar">
+
+                    <input type="number" default="0" id="chavinha" onkeyup="a()" placeholder="Digite a chave"><br>
+                    <textarea name="cesar" id="inputCesar" placeholder="Digite o texto aqui" onkeyup="a()" cols="30" rows="10"></textarea>
+                    <div id="cesarResultado" class="sol">Resultado</div>
+
+                </div>
+                <div id="base_64">
+                    <textarea name="base_64" id="inputBase_64" placeholder="Digite o texto aqui" onkeyup="b()" cols="30" rows="10"></textarea>
+                    <div id="base_64Resultado" class="sol">Resultado</div>
+                </div>
+
+            </section>
+
+        </main>
+        <footer>
+            Página adaptada por
+            <a href="https://www.linkedin.com/in/emanuel-melo-b7285810b
+                                        ">Emanuel Melo</a>
+
+        </footer>
+        <script src="principal.js"></script>
+    </body>
+</html>
